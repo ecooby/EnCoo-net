@@ -1,0 +1,9 @@
+AddDefaultCharset utf-8
+AddCharset utf-8 .js
+Options -Indexes
+ErrorDocument 404 /404
+RewriteEngine on
+#Options +FollowSymlinks
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L,QSA]

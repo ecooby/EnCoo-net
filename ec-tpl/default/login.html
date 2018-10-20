@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>eCooby - Login</title>
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://semantic-ui.com/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="../tmp/assets/css/main.css">
+</head>
+<body><br>
+	<div class="ui main text container">
+		<div class="ui middle aligned center aligned grid">
+		  <div class="column">
+		    <h2 class="ui teal image header">
+		      <div class="content">
+		        Вход в профиль
+		      </div>
+		    </h2>
+			<form class="ui large form" method="POST" id="auth_form" enctype="multipart/form-data">
+		      <div class="ui stacked segment">
+		        <div class="field">
+		          <div class="ui left icon input">
+		            <i class="user icon"></i>
+		            <input type="text" name="username" placeholder="Username">
+		          </div>
+		        </div>
+		        <div class="field">
+		          <div class="ui left icon input">
+		            <i class="lock icon"></i>
+		            <input type="password" name="password" placeholder="Password">
+		          </div>
+		        </div>
+				<button type="submit" id="btn_auth" class="ui fluid large teal submit button">Войти</button>
+		      </div>
+
+		      <div class="ui error message" id="result"></div>
+
+		    </form>
+
+		    <div class="ui message">
+		      Нет профиля? <a href="/signup">Создать</a>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	
+	<div class="footer"></div>
+
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous"></script>
+	<script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+	<script src="../tmp/assets/js/script.js"></script>
+	<script type="text/javascript">
+		$(document)
+		  .ready(function() {
+		    $('.ui.form')
+		      .form({
+		        fields: {
+		          email: {
+		            identifier  : 'email',
+		            rules: [
+		              {
+		                type   : 'empty',
+		                prompt : 'Введите ваш e-mail адрес'
+		              },
+		              {
+		                type   : 'email',
+		                prompt : 'Введите верно ваш e-mail адрес'
+		              }
+		            ]
+		          },
+		          password: {
+		            identifier  : 'password',
+		            rules: [
+		              {
+		                type   : 'empty',
+		                prompt : 'Введите ваш пароль'
+		              },
+		              {
+		                type   : 'length[6]',
+		                prompt : 'Ваш пароль должен содержать от 6 символов'
+		              }
+		            ]
+		          }
+		        }
+		      })
+		    ;
+		  })
+		;
+	</script>
+
+</body>
+</html>
